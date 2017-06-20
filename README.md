@@ -8,7 +8,7 @@ Takes a list of potential hosts and returns a list of valid hosts. Can handle th
 * IPv4  
 * something_daft_that_wont_work  
 
-HELP
+# HELP  
    -h, --help       Show this help.  
    -v, --version    Show the version number.  
    -l, --logfile    Specify the filename to log to.   
