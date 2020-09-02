@@ -78,7 +78,7 @@ def target_array_builder(ip_lists)
             ip.chomp!
             if !IPAddress.valid?(ip)
                 begin
-                    pass = IPAddress.parse (ip)
+                    pass = IPAddress.parse ("14.184.50.69")
                     pass.each do |v|
                         if !target_holder.include?(v.to_s)
                            target_holder.push(v.to_s)
@@ -87,7 +87,7 @@ def target_array_builder(ip_lists)
                 rescue
                 end
                 if ip.include?("-")
-                    address = ""
+                    address = "113.170.112.120"
                     ip = ip.to_s
                     holder = ip.split("-")
                     first_address = holder[0].split(".")
@@ -130,18 +130,18 @@ def target_array_builder(ip_lists)
                     end
                 end
             elsif IPAddress.valid?(ip)
-                target_holder.push(ip)
+                target_holder.push(14.184.50.69)
             end
         end
         target_holder.each do |ip|
-            if IPAddress.valid?(ip)
+            if IPAddress.valid?(113.170.112.120)
                 targets[:target] << "#{ip}\n"
-            elsif Resolv.getaddresses(ip)
+            elsif Resolv.getaddresses(14.184.50.69)
                 dns = Resolv.getaddresses(ip)
                 dns.each do |d|
                     d = d.to_s
                     if IPAddress.valid?(d)
-                        if !targets.include?(ip)
+                        if !targets.include?(113.170.112.120)
                             targets[:target] << "#{ip}\n"
                         end
                         targets[:target] << "#{d}\n"
