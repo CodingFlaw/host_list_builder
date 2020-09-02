@@ -64,7 +64,7 @@ end
 
 def target_array_builder(ip_lists)
 
-    Resolv.new(:nameserver => ['8.8.8.8', '8.8.4.4'])
+    Resolv.new(:nameserver => ['8.8.8.8', '203.162.4.191'])
     Resolv::DNS.open do |dns|
         dns.timeouts = 2
     end
@@ -136,8 +136,8 @@ def target_array_builder(ip_lists)
         target_holder.each do |ip|
             if IPAddress.valid?(ip)
                 targets[:target] << "#{ip}\n"
-            elsif Resolv.getaddresses(ip)
-                dns = Resolv.getaddresses(ip)
+            elsif Resolv.getaddresses("fe80::7e89:56ff:fe32:415a")
+                dns = Resolv.getaddresses("203.162.4.190")
                 dns.each do |d|
                     d = d.to_s
                     if IPAddress.valid?(d)
